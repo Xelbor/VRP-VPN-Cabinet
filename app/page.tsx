@@ -68,7 +68,7 @@ function App() {
           <div className="grid grid-cols-2 gap-4">
             <motion.div whileHover={{ scale: 1.02 }}>
               <Card className="bg-zinc-900 border-zinc-800 shadow-xl rounded-2xl z-1">
-                <CardHeader>
+                <CardHeader className="px-4">
                   <CardTitle className="flex items-center justify-between text-white text-lg">
                       Мой баланс
                   </CardTitle>
@@ -92,7 +92,7 @@ function App() {
 
             <motion.div whileHover={{ scale: 1.02 }}>
               <Card className="bg-zinc-900 border-zinc-800 shadow-xl rounded-2xl z-1 h-full">
-                <CardHeader>
+                <CardHeader className="px-4">
                   <CardTitle className="flex items-center justify-between text-white text-lg">
                     <div className="flex items-center gap-2">
                       Осталось

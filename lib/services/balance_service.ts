@@ -1,7 +1,5 @@
-const base_url = process.env.NEXT_PUBLIC_BASE_URL;
-
 export async function fetchBalance(userId: string, token: string) {
-  const response = await fetch(`${base_url}/api/balance`, {
+  const response = await fetch(`api/balance`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -18,7 +16,7 @@ export async function fetchBalance(userId: string, token: string) {
 }
 
 export async function сhargeBalance(userId: string, amount: number, method: string, token: string) {
-  const response = await fetch(`${base_url}/api/chargeBalance`, {
+  const response = await fetch(`api/chargeBalance`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

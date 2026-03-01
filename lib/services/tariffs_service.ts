@@ -1,7 +1,5 @@
-const base_url = process.env.NEXT_PUBLIC_BASE_URL;
-
 export async function buyKey(userId: string, tariff: string, token: string) {
-  const response = await fetch(`${base_url}/api/buykey`, {
+  const response = await fetch(`api/buykey`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

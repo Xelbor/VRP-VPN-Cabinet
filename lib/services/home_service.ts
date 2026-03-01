@@ -1,7 +1,5 @@
-const base_url = process.env.NEXT_PUBLIC_BASE_URL;
-
 export async function fetchHome(userId: string, token: string) {
-  const response = await fetch(`${base_url}/api/home`, {
+  const response = await fetch(`api/home`, {
     method: 'POST',
     headers: {
       "Content-Type": "application/json",
@@ -18,7 +16,7 @@ export async function fetchHome(userId: string, token: string) {
 }
 
 export async function deleteDevice(userId: string, hwid: string, token: string) {
-  const response = await fetch(`${base_url}/api/delete_hwid_user`, {
+  const response = await fetch(`api/delete_hwid_user`, {
     method: 'POST',
     headers: {
       "Content-Type": "application/json",

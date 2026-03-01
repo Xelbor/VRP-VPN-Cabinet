@@ -15,7 +15,12 @@ export default function TariffsPage() {
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
-  const token = localStorage.getItem("jwt");
+  function getToken() {
+    if (typeof window === "undefined") return null;
+    return localStorage.getItem("jwt");
+  }
+
+  const token = getToken();
 
   const handleBuyKey = (id: string, plan: string) => {
     setErrorMsg(null);

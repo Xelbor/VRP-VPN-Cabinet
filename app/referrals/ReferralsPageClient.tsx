@@ -15,7 +15,12 @@ export default function ReferralsPageClient() {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState<any>(null);
 
-  const token = localStorage.getItem("jwt");
+  function getToken() {
+    if (typeof window === "undefined") return null;
+    return localStorage.getItem("jwt");
+  }
+
+  const token = getToken();
 
   useEffect(() => {
     async function load() {

@@ -32,7 +32,12 @@ export default function HomePageClient() {
     }
   }
 
-  const token = localStorage.getItem("jwt");
+  function getToken() {
+    if (typeof window === "undefined") return null;
+    return localStorage.getItem("jwt");
+  }
+
+  const token = getToken();
 
   useEffect(() => {
     init();

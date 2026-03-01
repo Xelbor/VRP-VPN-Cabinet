@@ -11,12 +11,18 @@ importers:
       '@telegram-apps/sdk':
         specifier: ^3.11.8
         version: 3.11.8(typescript@5.9.3)
+      '@tma.js/sdk':
+        specifier: ^3.1.7
+        version: 3.1.7(typescript@5.9.3)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      devicons:
+        specifier: ^1.8.0
+        version: 1.8.0
       framer-motion:
         specifier: ^12.34.2
         version: 12.34.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -38,6 +44,12 @@ importers:
       react-dom:
         specifier: 19.2.3
         version: 19.2.3(react@19.2.3)
+      react-icons:
+        specifier: ^5.5.0
+        version: 5.5.0(react@19.2.3)
+      sonner:
+        specifier: ^2.0.7
+        version: 2.0.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       tailwind-merge:
         specifier: ^3.5.0
         version: 3.5.0
@@ -1444,6 +1456,24 @@ packages:
     resolution: {integrity: sha512-pXh9BdnLZF3e2BGc4WL+RTRMAUpqKpaSP3Rs8rB4WyRwIoRSGWFKE4gtT/9m42LGixB8YVwdo/pJ+9XO765XEA==}
     deprecated: This package is not supported anymore. Use @tma.js/types instead
 
+  '@tma.js/bridge@2.2.3':
+    resolution: {integrity: sha512-R+FQTxaFbQVBgtegfCvOU4SH1TcXhgGvFotNzrtsaRmiuPlvsMNSbtslfsysg0Yv3d6svAPAWJ1PJjimAopfag==}
+
+  '@tma.js/sdk@3.1.7':
+    resolution: {integrity: sha512-yHYqr+Gwj2wptmkceYAZ+ZPOV1Tv3f/UpJTkpngUt7shZg2vJQnZINnHC93iqznLo/Vqr15TO8UGzOdBQ7rhNA==}
+
+  '@tma.js/signals@1.0.1':
+    resolution: {integrity: sha512-i2HUuwGqL4BmM5KAklAUhMhlEgUOF+F4nMHHS/zxrmD0upHE/0CiXCEdQxVeeOGN6e2RrKlonA40sDtR6OUDCw==}
+
+  '@tma.js/toolkit@1.0.4':
+    resolution: {integrity: sha512-6CDlkgc+43WD2jy6jog3B50yt9t+/wRwrN25zOa4iSw4IzfqoFjaQcJzTupBYaRxz19C3Rrir7p0/qStS/Z8vw==}
+
+  '@tma.js/transformers@1.1.3':
+    resolution: {integrity: sha512-zRL+fdo/NBpGqCJfl8ItAvcJIFT5Zy6UOYJwQPmUV5/gTHgmSvmGlrP43PeVi9XZ7Ggf4xbO6LUa4ehxozhMTA==}
+
+  '@tma.js/types@1.0.2':
+    resolution: {integrity: sha512-qs4mi+U1xZmMQBdMhWAo1X4YqUJ/ae0y28s+GNCpQq58bsJo0h8rvyVOB1RwPvXogIY9+yribbZe6z3AIJmsAQ==}
+
   '@ts-morph/common@0.27.0':
     resolution: {integrity: sha512-Wf29UqxWDpc+i61k3oIOzcUfQt79PIT9y/MWfAGlrkjg6lBC1hwDECLXPVJAhWjiGbfBCxZd65F/LIZF3+jeJQ==}
 
@@ -1766,6 +1796,9 @@ packages:
   better-promises@0.4.1:
     resolution: {integrity: sha512-cDW7eMvhvCoWzSih5o/OxsAgTUfP05yGMq77xNZUTmcZoNU9vEeFZJ+yJJi4lnocvxFrVFKsG0Yxt7ZnuYJEig==}
 
+  better-promises@1.0.0:
+    resolution: {integrity: sha512-gPgL2nRgeSbMIe3QpsYdKR3K0S9OZuphVuos60Eqsw8d/6GivOkyJ5D/zmnolJ6hzh7upnnflBUWUlQh4qpU2A==}
+
   body-parser@2.2.2:
     resolution: {integrity: sha512-oP5VkATKlNwcgvxi0vM0p/D3n2C3EReYVX+DNYs5TjZFn/oQt2j+4sVJtSMr18pdRr8wjTcBl6LoV+FUwzPmNA==}
     engines: {node: '>=18'}
@@ -2001,6 +2034,10 @@ packages:
   detect-node-es@1.1.0:
     resolution: {integrity: sha512-ypdmJU/TbBby2Dxibuv7ZLW3Bs1QEmM7nHjEANfohJLvE0XVujisn1qPJcZxg+qDucsr+bP6fLD1rPS3AhJ7EQ==}
 
+  devicons@1.8.0:
+    resolution: {integrity: sha512-tRS3bNxy9mbDVK0g4/+t5PlwMjjOteuh5LAhjMgimAPUgiKB+wCUCf7+uugufZ1vC9AKMRn5Pljbi210qCbmkQ==}
+    engines: {node: '>=0.10.3'}
+
   diff@8.0.3:
     resolution: {integrity: sha512-qejHi7bcSD4hQAZE0tNAawRK1ZtafHDmMTMkrrIGgSLl7hTnQHmKCeB45xAcbfTqK2zowkM3j3bHt/4b/ARbYQ==}
     engines: {node: '>=0.3.1'}
@@ -2053,6 +2090,9 @@ packages:
 
   error-kid@0.0.7:
     resolution: {integrity: sha512-8mFs7ZaDWlBFgjOy4lHLMCe2+KZfZXGx5GOgh2VQ/M1CCIvSWzbl2OMl+5fdZgrgoUfhTeF+NPhmqfEvUhN8yw==}
+
+  error-kid@1.0.2:
+    resolution: {integrity: sha512-Xvq0ZrY/azCbREWKt9E/3mXDF0MkuEVVvHnOKutUhtq2O8pyneEixQ4nSFkA19Xfn+/OVSg//iVG0dxIDj7DIA==}
 
   es-abstract@1.24.1:
     resolution: {integrity: sha512-zHXBLhP+QehSSbsS9Pt23Gg964240DPd6QCf8WpkqEXxQ7fhdZzYsocOr5u7apWonsS5EjZDmTF+/slGMyasvw==}
@@ -2326,6 +2366,9 @@ packages:
   forwarded@0.2.0:
     resolution: {integrity: sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==}
     engines: {node: '>= 0.6'}
+
+  fp-ts@2.16.11:
+    resolution: {integrity: sha512-LaI+KaX2NFkfn1ZGHoKCmcfv7yrZsC3b8NtWsTVQeHkq4F27vI5igUuO53sxqDEa2gNQMHFPmpojDw/1zmUK7w==}
 
   framer-motion@12.34.2:
     resolution: {integrity: sha512-CcnYTzbRybm1/OE8QLXfXI8gR1cx5T4dF3D2kn5IyqsGNeLAKl2iFHb2BzFyXBGqESntDt6rPYl4Jhrb7tdB8g==}
@@ -3251,6 +3294,11 @@ packages:
     peerDependencies:
       react: ^19.2.3
 
+  react-icons@5.5.0:
+    resolution: {integrity: sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==}
+    peerDependencies:
+      react: '*'
+
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -3438,6 +3486,12 @@ packages:
 
   sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
+
+  sonner@2.0.7:
+    resolution: {integrity: sha512-W6ZN4p58k8aDKA4XPcx2hpIQXBRAgyiWVkYhT7CvK6D3iAu7xjvVyhQHg2/iaKJZ1XVJ4r7XuwGL+WGEK37i9w==}
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      react-dom: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
@@ -3723,6 +3777,14 @@ packages:
 
   valibot@1.0.0-beta.14:
     resolution: {integrity: sha512-tLyV2rE5QL6U29MFy3xt4AqMrn+/HErcp2ZThASnQvPMwfSozjV1uBGKIGiegtZIGjinJqn0SlBdannf18wENA==}
+    peerDependencies:
+      typescript: '>=5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
+  valibot@1.2.0:
+    resolution: {integrity: sha512-mm1rxUsmOxzrwnX5arGS+U4T25RdvpPjPN4yR0u9pUBov9+zGVtO84tif1eY4r6zWxVxu3KzIyknJy3rxfRZZg==}
     peerDependencies:
       typescript: '>=5'
     peerDependenciesMeta:
@@ -5255,6 +5317,52 @@ snapshots:
 
   '@telegram-apps/types@2.0.3': {}
 
+  '@tma.js/bridge@2.2.3(typescript@5.9.3)':
+    dependencies:
+      '@tma.js/signals': 1.0.1
+      '@tma.js/toolkit': 1.0.4
+      '@tma.js/transformers': 1.1.3(typescript@5.9.3)
+      '@tma.js/types': 1.0.2
+      better-promises: 1.0.0
+      error-kid: 1.0.2
+      fp-ts: 2.16.11
+      mitt: 3.0.1
+      valibot: 1.2.0(typescript@5.9.3)
+    transitivePeerDependencies:
+      - typescript
+
+  '@tma.js/sdk@3.1.7(typescript@5.9.3)':
+    dependencies:
+      '@tma.js/bridge': 2.2.3(typescript@5.9.3)
+      '@tma.js/signals': 1.0.1
+      '@tma.js/toolkit': 1.0.4
+      '@tma.js/transformers': 1.1.3(typescript@5.9.3)
+      '@tma.js/types': 1.0.2
+      better-promises: 1.0.0
+      error-kid: 1.0.2
+      fp-ts: 2.16.11
+      valibot: 1.2.0(typescript@5.9.3)
+    transitivePeerDependencies:
+      - typescript
+
+  '@tma.js/signals@1.0.1': {}
+
+  '@tma.js/toolkit@1.0.4':
+    dependencies:
+      better-promises: 1.0.0
+      fp-ts: 2.16.11
+
+  '@tma.js/transformers@1.1.3(typescript@5.9.3)':
+    dependencies:
+      '@tma.js/toolkit': 1.0.4
+      '@tma.js/types': 1.0.2
+      fp-ts: 2.16.11
+      valibot: 1.2.0(typescript@5.9.3)
+    transitivePeerDependencies:
+      - typescript
+
+  '@tma.js/types@1.0.2': {}
+
   '@ts-morph/common@0.27.0':
     dependencies:
       fast-glob: 3.3.3
@@ -5580,6 +5688,10 @@ snapshots:
     dependencies:
       error-kid: 0.0.7
 
+  better-promises@1.0.0:
+    dependencies:
+      error-kid: 1.0.2
+
   body-parser@2.2.2:
     dependencies:
       bytes: 3.1.2
@@ -5788,6 +5900,8 @@ snapshots:
 
   detect-node-es@1.1.0: {}
 
+  devicons@1.8.0: {}
+
   diff@8.0.3: {}
 
   doctrine@2.1.0:
@@ -5833,6 +5947,8 @@ snapshots:
       is-arrayish: 0.2.1
 
   error-kid@0.0.7: {}
+
+  error-kid@1.0.2: {}
 
   es-abstract@1.24.1:
     dependencies:
@@ -6302,6 +6418,8 @@ snapshots:
       fetch-blob: 3.2.0
 
   forwarded@0.2.0: {}
+
+  fp-ts@2.16.11: {}
 
   framer-motion@12.34.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
     dependencies:
@@ -7200,6 +7318,10 @@ snapshots:
       react: 19.2.3
       scheduler: 0.27.0
 
+  react-icons@5.5.0(react@19.2.3):
+    dependencies:
+      react: 19.2.3
+
   react-is@16.13.1: {}
 
   react-remove-scroll-bar@2.3.8(@types/react@19.2.14)(react@19.2.3):
@@ -7498,6 +7620,11 @@ snapshots:
   signal-exit@4.1.0: {}
 
   sisteransi@1.0.5: {}
+
+  sonner@2.0.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
+    dependencies:
+      react: 19.2.3
+      react-dom: 19.2.3(react@19.2.3)
 
   source-map-js@1.2.1: {}
 
@@ -7809,6 +7936,10 @@ snapshots:
       typescript: 5.9.3
 
   valibot@1.0.0-beta.14(typescript@5.9.3):
+    optionalDependencies:
+      typescript: 5.9.3
+
+  valibot@1.2.0(typescript@5.9.3):
     optionalDependencies:
       typescript: 5.9.3
 

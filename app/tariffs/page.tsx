@@ -1,16 +1,47 @@
 'use client'
 
-import { Metadata } from "next";
 import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import Link from "next/link";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Wallet, SquarePlus } from 'lucide-react';
+import { SquarePlus } from 'lucide-react';
 import { useState } from 'react';
-import { Separator } from "@/components/ui/separator"
+import { Separator } from "@/components/ui/separator";
+import { buyKey } from "@/lib/services/tariffs_service";
+import { toast } from "sonner";
 
 
-export default function BalancePage() {
+export default function TariffsPage() {
+  const [userId, setUserId] = useState("1632782190");
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  const handleBuyKey = (id: string, plan: string) => {
+    setErrorMsg(null);
+    setLoading(true);
+
+    toast.promise(
+      buyKey(id, plan)
+        .then((result) => {
+          return result;
+        })
+        .catch((err: any) => {
+          if (err.message === "TRIAL_ALREADY_USED") {
+            throw new Error("Вы уже использовали бесплатный период");
+          }
+          throw new Error("Произошла ошибка при оформлении");
+        })
+        .finally(() => {
+          setLoading(false);
+        }),
+      {
+        loading: "Оформление тарифа...",
+        success: () => "Подписка успешно оформлена 🎉",
+        error: (err) => err.message,
+        position: "top-center",
+      },
+    );
+  };
+
   return (
     <motion.div className='root' initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
       <h2 className='font-bold text-5xl p-5 mt-5'>Тарифы</h2>
@@ -43,7 +74,7 @@ export default function BalancePage() {
                         <p className="text-2xl">БЕСПЛАТНО</p>
                       </div>
                   
-                      <Button className="w-full cursor-pointer">
+                      <Button onClick={() => handleBuyKey(userId, "trial")} className="w-full cursor-pointer">
                         Оформить
                       </Button>
                     </div>
@@ -67,7 +98,7 @@ export default function BalancePage() {
                         <p className="text-2xl">85<span className='font-mono font-bold'>₽</span> / месяц</p>
                       </div>
                   
-                      <Button className="w-full cursor-pointer">
+                      <Button onClick={() => handleBuyKey(userId, "paid_1")} className="w-full cursor-pointer">
                         Купить
                       </Button>
                     </div>
@@ -91,7 +122,7 @@ export default function BalancePage() {
                         <p className="text-2xl">150<span className='font-mono font-bold'>₽</span> / месяц</p>
                       </div>
                   
-                      <Button className="w-full cursor-pointer">
+                      <Button onClick={() => handleBuyKey(userId, "paid_2")} className="w-full cursor-pointer">
                         Купить
                       </Button>
                     </div>
@@ -115,7 +146,7 @@ export default function BalancePage() {
                         <p className="text-2xl">270<span className='font-mono font-bold'>₽</span> / месяц</p>
                       </div>
                   
-                      <Button className="w-full cursor-pointer">
+                      <Button onClick={() => handleBuyKey(userId, "paid_3")} className="w-full cursor-pointer">
                         Купить
                       </Button>
                     </div>

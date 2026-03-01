@@ -1,7 +1,13 @@
 const base_url = process.env.BASE_URL;
-const token = localStorage.getItem("jwt");
+
+function getToken() {
+  if (typeof window === "undefined") return null;
+  return localStorage.getItem("jwt");
+}
 
 export async function fetchBalance(userId: string) {
+  const token = getToken();
+
   const response = await fetch(`${base_url}/api/balance`, {
     method: 'POST',
     headers: {
@@ -19,6 +25,8 @@ export async function fetchBalance(userId: string) {
 }
 
 export async function сhargeBalance(userId: string, amount: number, method: string) {
+  const token = getToken();
+  
   const response = await fetch(`${base_url}/api/chargeBalance`, {
     method: 'POST',
     headers: {

@@ -22,13 +22,12 @@ VRP VPN Cabinet — это личный кабинет для продажи п�
 
 ```bash
 git clone https://github.com/Xelbor/VRP-VPN-Cabinet.git
-cd VRP-VPN-Cabinet
+cd vrp-cabinet
 ```
 
 Сборка и запуск через Docker
 
 ```bash
-docker build -t vrp-vpn .
-docker run -p 3000:3000 vrp-vpn
+docker compose up -d --build && docker compose logs -f -t
 ```
 

@@ -20,11 +20,14 @@ export default function BalancePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState<any>(null);
     
+  const token = localStorage.getItem("jwt");
   useEffect(() => {
     async function load() {
       try {
         setIsLoading(true);
-        const result = await fetchBalance(userId);
+        
+        if (!token) return;
+        const result = await fetchBalance(userId, token);
 
         setData({
           ...result
@@ -62,7 +65,8 @@ export default function BalancePage() {
     }
 
     try {
-      const result = await сhargeBalance(userId, amount, selected);
+      if (!token) return;
+      const result = await сhargeBalance(userId, amount, selected, token);
       
       if (result && result.payment_link) {
         window.location.href = result.payment_link;

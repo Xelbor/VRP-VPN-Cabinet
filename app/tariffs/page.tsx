@@ -15,12 +15,16 @@ export default function TariffsPage() {
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
+  const token = localStorage.getItem("jwt");
+
   const handleBuyKey = (id: string, plan: string) => {
     setErrorMsg(null);
     setLoading(true);
 
+    if (!token) return;
+
     toast.promise(
-      buyKey(id, plan)
+      buyKey(id, plan, token)
         .then((result) => {
           return result;
         })

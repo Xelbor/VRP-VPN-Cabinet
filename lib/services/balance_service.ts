@@ -1,13 +1,6 @@
 const base_url = process.env.BASE_URL;
 
-function getToken() {
-  if (typeof window === "undefined") return null;
-  return localStorage.getItem("jwt");
-}
-
-export async function fetchBalance(userId: string) {
-  const token = getToken();
-
+export async function fetchBalance(userId: string, token: string) {
   const response = await fetch(`${base_url}/api/balance`, {
     method: 'POST',
     headers: {
@@ -24,9 +17,7 @@ export async function fetchBalance(userId: string) {
   return response.json();
 }
 
-export async function сhargeBalance(userId: string, amount: number, method: string) {
-  const token = getToken();
-  
+export async function сhargeBalance(userId: string, amount: number, method: string, token: string) {
   const response = await fetch(`${base_url}/api/chargeBalance`, {
     method: 'POST',
     headers: {

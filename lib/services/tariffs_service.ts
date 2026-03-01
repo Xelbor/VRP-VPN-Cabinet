@@ -1,7 +1,6 @@
 const base_url = process.env.BASE_URL;
-const token = localStorage.getItem("jwt");
 
-export async function buyKey(userId: string, tariff: string) {
+export async function buyKey(userId: string, tariff: string, token: string) {
   const response = await fetch(`${base_url}/api/buykey`, {
     method: 'POST',
     headers: {

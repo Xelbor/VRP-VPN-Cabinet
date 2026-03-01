@@ -15,11 +15,15 @@ export default function ReferralsPageClient() {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState<any>(null);
 
+  const token = localStorage.getItem("jwt");
+
   useEffect(() => {
     async function load() {
       try {
         setIsLoading(true);
-        const result = await fetchReferrals(userId);
+
+        if (!token) return;
+        const result = await fetchReferrals(userId, token);
   
         setData({
           ...result

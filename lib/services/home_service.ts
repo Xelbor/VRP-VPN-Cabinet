@@ -1,7 +1,6 @@
 const base_url = process.env.BASE_URL;
-const token = localStorage.getItem("jwt");
 
-export async function fetchHome(userId: string) {
+export async function fetchHome(userId: string, token: string) {
   const response = await fetch(`${base_url}/api/home`, {
     method: 'POST',
     headers: {
@@ -18,7 +17,7 @@ export async function fetchHome(userId: string) {
   return response.json();
 }
 
-export async function deleteDevice(userId: string, hwid: string) {
+export async function deleteDevice(userId: string, hwid: string, token: string) {
   const response = await fetch(`${base_url}/api/delete_hwid_user`, {
     method: 'POST',
     headers: {

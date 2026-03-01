@@ -32,6 +32,8 @@ export default function HomePageClient() {
     }
   }
 
+  const token = localStorage.getItem("jwt");
+
   useEffect(() => {
     init();
 
@@ -48,7 +50,8 @@ export default function HomePageClient() {
         
         await authenticate();
         
-        const result = await fetchHome(currentUserId);
+        if (!token) return;
+        const result = await fetchHome(currentUserId, token);
 
         setData({
           ...result,
@@ -70,7 +73,8 @@ export default function HomePageClient() {
   const handleDelete = async (hwid: string) => {
     if (!userId) return;
 
-    await deleteDevice(userId, hwid);
+    if (!token) return;
+    await deleteDevice(userId, hwid, token);
     setData((prev: any) => ({
       ...prev,
       user_devices: {

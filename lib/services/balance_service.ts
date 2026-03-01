@@ -1,4 +1,4 @@
-const base_url = 'http://127.0.0.1:5000';
+const base_url = process.env.BASE_URL;
 const token = localStorage.getItem("jwt");
 
 export async function fetchBalance(userId: string) {

@@ -13,12 +13,9 @@ import { useEffect, useState } from 'react';
 import { init, initData } from '@tma.js/sdk';
  
 export default function HomePageClient() {
-  const [userId, setUserId] = useState("1632782190");
+  const [userId, setUserId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState<any>(null);
-
-  init();
-  const raw = initData.raw;
 
   async function authenticate() {
     const response = await fetch('/api/auth/telegram', {
@@ -32,27 +29,45 @@ export default function HomePageClient() {
     const { token } = await response.json();
     localStorage.setItem('jwt', token);
   }
-  
+
   useEffect(() => {
-    async function load() {
+    init();
+
+    const tgUser = initData.user();
+    const id = tgUser?.id.toString();
+
+    if (id) {
+      setUserId(id);
+    }
+
+    async function load(currentUserId: string) {
       try {
         setIsLoading(true);
-        const result = await fetchHome(userId);
+        
+        await authenticate();
+        
+        const result = await fetchHome(currentUserId);
 
         setData({
           ...result,
           formattedDate: formatDate(result.end_date),
           daysLeft: getTimeLeft(result.end_date),
         });
+      } catch (error) {
+        console.error("Ошибка загрузки:", error);
       } finally {
         setIsLoading(false);
       }
     }
 
-    load();
+    if (id) {
+      load(id);
+    }
   }, []);
 
   const handleDelete = async (hwid: string) => {
+    if (!userId) return;
+    
     await deleteDevice(userId, hwid);
     setData((prev: any) => ({
       ...prev,

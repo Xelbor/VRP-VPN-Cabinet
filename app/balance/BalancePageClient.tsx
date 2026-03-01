@@ -20,8 +20,15 @@ export default function BalancePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState<any>(null);
     
-  const token = localStorage.getItem("jwt");
+  function getToken() {
+    if (typeof window === "undefined") return null;
+    return localStorage.getItem("jwt");
+  }
+
+  const token = getToken();
+
   useEffect(() => {
+
     async function load() {
       try {
         setIsLoading(true);
@@ -49,6 +56,11 @@ export default function BalancePage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (!token) {
+      console.error("No have token");
+      return;
+    }
+
     if (!amount || Number(amount) <= 0) {
       setAmountError("Введите корректную сумму");
       return;
@@ -65,7 +77,6 @@ export default function BalancePage() {
     }
 
     try {
-      if (!token) return;
       const result = await сhargeBalance(userId, amount, selected, token);
       
       if (result && result.payment_link) {

@@ -1,4 +1,4 @@
-const base_url = process.env.BASE_URL;
+const base_url = process.env.NEXT_PUBLIC_BASE_URL;
 
 export async function fetchBalance(userId: string, token: string) {
   const response = await fetch(`${base_url}/api/balance`, {
